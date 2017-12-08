@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "InsertContact";
+}
+
+
+
+<div class=" row valign-wrapper">
+    <div class="col s6 offset-s3 valign">
+        <div class="card-panel hoverable" style="width: 548px;">
+            
+            <div class="card-content">
+                <h5>New Contact entered:</h5>
+
+                <div class="center-align">
+                    <P>Name: @ViewBag.ContactName</P>
+                    <p>Company Name: @ViewBag.CompanyName</p>
+                    <p>Industry: @ViewBag.Industry</p>
+                    <p>Employees: @ViewBag.Employees</p>
+                    <p>Revenue: @ViewBag.Revenue</p>
+                </div>
+
+                
+
+            </div>
+            <div class="card-action center-align">
+                <a href="/Home/" class="waves-effect waves-light btn black">Home</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>

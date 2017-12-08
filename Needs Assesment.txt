@@ -1,0 +1,45 @@
+This application will only allow functionality to users, but it will allow anontmous users to access the splash page. Once a user is authenticated they will have access to the functionality of the site. THis contains the ability to filter through the contact (by industry and state) and seeing all clients. 
+
+
+
+
+
+What does it need to do? (Functional Requirements)
+- Different UserRoles with different permissions
+	- Admin: Have the ability to edit roles, edit contacts, and functionality 
+	- Employee: Edit COntact, Functionality
+	- CLient(normal user): Functionality
+- Storage and Manipulation of Customer Contacts
+	- Ability to Create, Read, Update, and Delete contacts
+- Cross referencing of Customers(Buy service provided) across multiple client (buy dvice and solutions personalized to their particular needs) lists
+	- Ability to query contacts based on what client wants
+
+What do you need in it?(data requirements based on Functional Requirements)
+- Contact Data
+	- Direct Contact Name	
+	- Direct Contact Email
+	- Direct Contact Phone
+	- Company Name
+	- Job Function
+	- Job Level
+	- SIC COde?	
+	- Industry
+	- Employees in Company
+	- Revenue
+	- Zip Code
+	- COuntry
+	-County
+	- State
+	- City
+	- Area Code
+	
+
+
+
+Who is going to use it(end user concerns-never underestimate the stupidity of the end user)?
+Top industries all over the world 
+
+Success Metrics: Application would be able to display a list of contacts to our clients, and will give clients the ability to filter through the data. The Employees would be able to use all the funstionality of the site and has the priveledges to edit the contact as employeers see fit. The admin role would be able to do all that employee user does and have the ability to edit user roles.
+
+
+

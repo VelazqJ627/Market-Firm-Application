@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMe</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/css/materialize.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/mycss.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+
+</head>
+<body>
+
+    <header>
+        <div class="navbar-fixed ">
+            <nav class=" red darken-4">
+                <div class="nav-wrapper ">
+                    <a href="/Home" class="brand-logo  white-text" alt="Book Me" style="background-color:black;padding-right: 10px;padding-left: 10px;margin-left: 10px;"><i class="material-icons"><img src="~/Content/image/logo.png" style=" width: 75px;padding-top: 5px;" /></i>Book Me</a>
+                    
+                    <ul class="right hide-on-med-and-down white-text">
+
+                        <li><a href="#" class="white-text">@Html.Partial("_LoginPartial")</a></li>
+                    </ul>
+
+
+
+                  <a href="#" data-activates="slide-out" class="button-collapse show-on-large right">Menu</a>
+
+
+                </div>
+            </nav>
+        </div>
+        <ul id="slide-out" class="side-nav">
+            <li><a href="/Home/GetAllContacts">See all Contacts</a></li>
+            <li><a href="/Home/LinqIndustry">Search by Industry</a></li>
+            <li><a href="/Home/LinqState">Search by State</a></li>
+            
+            @if (User.IsInRole("Employee"))
+            {
+                <li><a href="#" class="red-text">Employee TOOLS</a></li>
+                <li><a href="/Home/InsertContactForm">Insert Contact</a></li>
+                <li><a href="#">Edit Contact</a></li>
+            }
+
+
+            @if (User.IsInRole("Admin"))
+            {
+                <li><a href="#"class="red-text">EMPLOYEE TOOLS</a></li>
+                <li><a href="/Home/InsertContact">Insert Contact</a></li>
+                <li><a href="#">Edit Contact</a></li>
+
+                <li><a href="#" class="red-text">ADMIN TOOLS</a></li>
+                <li>@Html.ActionLink("Role Manager", "Index", "Roles")</li>
+            }
+
+
+            
+
+        </ul>
+    </header>
+
+
+    @RenderBody()
+    <hr />
+    <div class="container">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/js/init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "LinqState";
+}
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search State" title="Type in a name">
+<table class="responsive-table highlight" id="myTable">
+    <thead>
+        <tr>
+
+            <th>Contact Name</th>
+            <th>Contact Email</th>
+            <th>COntact Phone</th>
+            <th>Company Name</th>
+            <th>Job Function</th>
+            <th>Job Level</th>
+            <th>Industry</th>
+            <th>Employees</th>
+            <th>Revenue</th>
+            <th>Zip Code</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var anItem in ViewBag.ListOfContact)
+        {
+            <tr>
+
+                <td>@anItem.ContactName</td>
+                <td>@anItem.ContactEmail</td>
+                <td>@anItem.ContactPhone</td>
+                <td>@anItem.CompanyName</td>
+                <td>@anItem.JobFunc</td>
+                <td>@anItem.JobLevel</td>
+                <td>@anItem.Industry</td>
+                <td>@anItem.Employees</td>
+                <td>@anItem.Revenue</td>
+                <td>@anItem.ZipCode</td>
+                <td>@anItem.Country</td>
+                <td>@anItem.State</td>
+                <td>@anItem.City</td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+
+        function myFunction() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[11];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+</script>
+
